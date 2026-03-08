@@ -107,20 +107,6 @@ Invoke-RestMethod -Uri "http://localhost:5041/api/todos" -Method Get -Headers @{
 
 ## 1. Пояснение архитектуры
 
-Веб-служба построена на принципе **разделения ответственности** с использованием **конвейера middleware**:
-
-```mermaid
-flowchart TD
-    A["Клиент"] --> B["RequestIdMiddleware\n(генерация requestId)"]
-    B --> C["ErrorHandlingMiddleware\n(перехват исключений)"]
-    C --> D["TimingAndLogMiddleware\n(замер времени)"]
-    D --> E["Маршрутизация"]
-    E --> F["Эндпоинты API"]
-    F --> G["Репозиторий + Валидация"]
-    G --> H["TimingAndLogMiddleware\n(логирование)"]
-    H --> I["Клиент получает ответ"]
-```
-
 **Компоненты:**
 
 - **Middleware**:
