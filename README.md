@@ -10,8 +10,8 @@
 ## Сборка и запуск
 
 ```bash
-git clone <url-репозитория>
-cd TodoList
+git clone https://github.com/Kuonkli/FrameworksFirstTask.git
+cd FrameworksFirstTask
 dotnet run
 ```
 
